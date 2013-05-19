@@ -1,0 +1,67 @@
+2013-05-18 (Saturday)
+
+Setting: Sitting at home, enjoying a pleasant Saturday evening. A thought strikes, and pbarton cannot help but to remotely connect and put bits to disk.
+
+Quick technical details:
+
+The distribution used for compiling the LaTeX source in this folder was TeXLive. On Ubuntu 12.04, installing this is a simple matter:
+
+`sudo apt-get install texlive texlive-latex-extra`
+
+Then install http://www.ctan.org/pkg/subfiles. (TODO: eliminate dependency on 'subfiles' package)
+
+Aaaaaaand you're done.
+
+
+So, you're wondering "Why LaTeX?" and thinking I'm a bit of a boffin for doing things this way. I'd like to detail for you exactly why this is the case.
+
+Reasons:
+
+1. The City Code is a highly complex document with formatting that a word processor cannot understand (or at least, 'cannot easily understand').
+
+2. Even if #1 were not an issue, you would be locked in to a word processor, and probably a (very expensive) commercial one at that.
+
+3. LaTeX is open source, inherently free, and the file format (plain text) runs no risk of obselescence.
+   a. Just try opening a Word '97 file in Word 2013 (or whatever the children are using these days) and see how well it goes for you.
+   b. A LaTeX file renders the same today as it did 30 years ago: consistenly and beautifully
+
+4. LaTeX is typesetting software, not a word processor.
+   a. The City Code is an IMPORTANT document which should look professional, legal, and IMPORTANT.
+      1. Word doesn't look 'professional' or 'important', it looks like an inter-office memo.
+      2. Acrobat? You can get there, but it's even more expensive than Office and gets you no further toward the all-important goal of 'abstraction'.
+   b. The City Code is an important document which should invite readers to jump in.
+      1. Reminder: it's typesetting software, not a word processor.
+      2. LaTeX can do the heavy lifting for you (see next)
+
+5. Automatic content generation:
+   a. Table of Contents? Automatic (and ALWAYS CORRECT)
+   b. Individual Title Tables of Content? Automatic (and ALWAYS CORRECT)
+   c. Indices? Automatic (and ALWAYS CORRECT)
+   d. Cross-references? Automatic (and ALWAYS CORRECT)
+
+6. Abstraction.
+   a. Formatting and content are two separate things. Word processors treat them as one and the same thing, LaTeX does not.
+   b. Editors need not worry about formatting, only content. This is good, as most people who touch a 'living document' in a word processor tend to screw it up somehow.
+   c. Speaking of screwing things up, lists and tables are prime candidates. They're near-impossible to screw up once they've been abstracted away from their formatting.
+
+6. It's no more difficult to learn how to manage a document in LaTeX than it is to learn how to manage the same document in a word processor.
+   a. It's arguably a more shallow learning curve. Every word processor is different, but all you'll need with LaTeX is a (free) 'TeX' distribution (Linux, OSX, Windows - it doesn't matter) to handle the rendering. Most will already include the extensions I have used, and the ones which don't will provide informative errors that quick Google searches will help you resolve.
+   b. It's DEFINITELY a more shallow learning curve than Acrobat.
+
+7. Your output isn't limited to a specific file format.
+   a. At the time of writing, the City Code is output to two formats simultaneously:
+      1. PDF, and a smaller one than Acrobat was able to render given the old Word .doc files.
+      2. HTML/CSS - and not just a single monolithic page. It's logically broken into Titles, Chapter, Sections, Sub-Sections, Sub-Sub-Sections... you get the idea. MS Word CANNOT DO THIS.
+   b. Oh yeah, you can output to Word .doc(x) or RTF, among other useless formats. Just Google it.
+
+8. Since LaTeX is proper typesetting software, a document which is not strongly structured is revealed for what it is. This is a good thing, as it reveals stylistic inconsistency in the City Code and encourages fixing.
+
+9. The final output is very literally fit for print - as a book, which the City Code IS. Nobody writes books with Word, for the reasons I have already detailed.
+
+In closing, I know you will do whatever you want. Just don't tell me if you decide to switch to a 'powerful word processor'. 'Those people' are short-sighted and value busy work over accomplishment.
+
+THAT'S why it's LaTeX.
+
+A guy who values doing things properly,
+
+-Philip Barton
