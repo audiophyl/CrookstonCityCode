@@ -9,7 +9,7 @@ mkdir $OUTPUT_DIR
 
 # clean up any past output
 cd $OUTPUT_DIR
-rm *.aux *.log *.toc
+rm *.aux *.log *.toc *.pdf *.html *.css *.pl WARNINGS
 cd $TOP_DIR
 
 # do this twice to ensure proper ToC -- this is NORMAL for complex LaTeX documents
