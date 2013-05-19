@@ -5,8 +5,9 @@
 \usepackage{amsmath}
 \usepackage{enumerate}
 \setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{4}
 \renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}
 \titlespacing{\subsubsection}{0pt}{*0}{*0}
 \begin{document}
 
@@ -101,9 +102,15 @@
 \setcounter{chapter}{93}
 \setcounter{section}{0}
 \subfile{chap/chapter93}
-%\include{chap/chapter94}
-%\include{chap/chapter95}
-%\include{chap/chapter96}
+\setcounter{chapter}{94}
+\setcounter{section}{0}
+\subfile{chap/chapter94}
+\setcounter{chapter}{95}
+\setcounter{section}{0}
+\subfile{chap/chapter95}
+\setcounter{chapter}{96}
+\setcounter{section}{0}
+\subfile{chap/chapter96}
 
 \setcounter{part}{10}		%force ToC correctness
 \setcounter{chapter}{109}
