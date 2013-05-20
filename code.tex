@@ -1,14 +1,16 @@
 \documentclass{book}
 %\usepackage{subfiles}
-\usepackage[compact]{titlesec}
+%\usepackage[compact]{titlesec}
 \usepackage[margin=3cm]{geometry}
 \usepackage{amsmath}
 \usepackage{enumerate}
+\usepackage{minitoc}
 \setcounter{tocdepth}{1}
+\setcounter{minitocdepth}{1}
 \setcounter{secnumdepth}{4}
 \renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
 \renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}
-\titlespacing{\subsubsection}{0pt}{*0}{*0}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
 \begin{document}
 
 \title{Crookston City Code}
@@ -17,6 +19,7 @@
 
 \maketitle
 
+\dominitoc                  %set up for minitoc
 \tableofcontents
 %\include{chap/index}
 
