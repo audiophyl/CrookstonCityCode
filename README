@@ -1,4 +1,36 @@
-2013-05-18 (Saturday)
+2013-05-21
+
+Style/Formatting Notes.
+
+I am quite aware that the document, at present, does not adhere to an entirely consistent style. Below are the stylistic decisions I've made up to this point.
+
+Chapter files will begin:
+\chapter*{Chapter #: \\
+	Chapter Title}
+    \addstarredchapter{Chapter #: Chapter Title}
+    \minitoc
+    \emph{\textbf{Cross-Reference:}\\
+        Cross references here}
+    \pagebreak
+
+'Sub-chapters' will be presented as:
+\begin{center}
+    \emph{\textbf{\LARGE{SUB-CHAPTER TITLE}}}
+\end{center}
+
+Lists preceded by an introduction ending in a colon (":") will be enumerated (with the form "1)", "A)" or "a)"):
+\begin{enumerate}[{\indent}1)]
+    \item
+    ...
+\end{enumerate}
+
+Lists not preceded by an introduction ending in a colon will be treated as subsections/subsubsections/paragraphs/subparagraphs.
+
+Smart quotes will be used in favor of double quotes.
+
+CAPITALIZED WORDS contained within a block of text will be \emph'd, but not \textbf'd.
+
+2013-05-18
 
 Setting: Sitting at home, enjoying a pleasant Saturday evening. A thought strikes, and pbarton cannot help but to remotely connect and put bits to disk.
 
