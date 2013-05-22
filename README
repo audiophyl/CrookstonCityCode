@@ -40,10 +40,7 @@ The distribution used for compiling the LaTeX source in this folder was TeXLive.
 
 `sudo apt-get install texlive texlive-latex-extra`
 
-Then install http://www.ctan.org/pkg/subfiles. (TODO: eliminate dependency on 'subfiles' package)
-
 Aaaaaaand you're done.
-
 
 So, you're wondering "Why LaTeX?" and thinking I'm a bit of a boffin for doing things this way. I'd like to detail for you exactly why this is the case.
 
