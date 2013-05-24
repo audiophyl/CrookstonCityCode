@@ -1,13 +1,26 @@
 \documentclass{book}
-\usepackage[margin=3cm]{geometry}
-\usepackage{amsmath}
-\usepackage{enumerate}
-\usepackage{minitoc}
-\setcounter{tocdepth}{1}
-\setcounter{minitocdepth}{1}
-\setcounter{secnumdepth}{4}
-\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
-\renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}
+\usepackage[margin=3cm]{geometry}   % make our margins a little smaller instead of following the regular book document style
+\usepackage{amsmath}    % for \frac{enum}{denom}, although $^{enum}/_{denom}$ might look better...
+\usepackage{enumerate}  % for the creation of styled enumerated lists (one step above a normal enumeration)
+\usepackage{minitoc}    % tocs for each section
+\usepackage{tocloft}    % formatting for our tocs
+\usepackage{fmtcount}   % leading zeros for our section numbering
+\setcounter{tocdepth}{1}    % only show tocs to the section depth
+\setcounter{minitocdepth}{1}    % only show minitocs to the section depth
+\setcounter{secnumdepth}{4}     % force numbering to paragraph depth
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}    % give our subsections upper-case letters instead of numbers
+\renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}    % give our paragraphs lower-case letters instead of numbers
+
+% we want three digit long sections, so enforce leading zeros
+\newcommand{\leadingzero}{\ifnum\value{section}<100 \ifnum\value{section}<10 00\else 0\fi\fi\arabic{section}}
+
+\renewcommand{\thesection}{\thechapter.\leadingzero}
+
+
+\newcommand{\fillable}[1]{\noindent\rule{#1}{0.6pt}}    % create a command for drawing a signature/date type line
+
+\setlength{\cftsecnumwidth}{3.7em}  % give ourselves enough space between section numbers and their titles in the toc
+\renewcommand{\mtcSfont}{\small\normalfont} % print our minitocs in a normal font
 
 \begin{document}
 
@@ -17,13 +30,12 @@
 
 \maketitle
 
-\dominitoc                  %set up for minitoc
+\dominitoc                  % set up for minitoc
 \tableofcontents
-%\include{chap/index}
 
 \mainmatter
 
-\setcounter{part}{0}
+\setcounter{part}{0}        % force toc correctness
 \part*{Title I: General Provisions}
 \addcontentsline{toc}{part}{Title I: General Provisions}
 \setcounter{chapter}{10}
@@ -33,7 +45,7 @@
 \setcounter{section}{0}
 \input{chap/chapter11}
 
-\setcounter{part}{2}		%force ToC correctness
+\setcounter{part}{2}		% force ToC correctness
 \part*{Title III: Administration}
 \addcontentsline{toc}{part}{Title III: Administration}
 \setcounter{chapter}{30}
@@ -58,7 +70,7 @@
 \setcounter{section}{0}
 \input{chap/chapter36}
 
-\setcounter{part}{4}		%force ToC correctness
+\setcounter{part}{4}		% force ToC correctness
 \part*{Title V: Public Works}
 \addcontentsline{toc}{part}{Title V: Public Works}
 \setcounter{chapter}{50}
@@ -74,7 +86,7 @@
 \setcounter{section}{0}
 \input{chap/chapter53}
 
-\setcounter{part}{6}		%force ToC correctness
+\setcounter{part}{6}		% force ToC correctness
 \part*{Title VII: Traffic Code}
 \addcontentsline{toc}{part}{Title VII: Traffic Code}
 \setcounter{chapter}{70}
@@ -87,7 +99,7 @@
 \setcounter{section}{0}
 \input{chap/chapter72}
 
-\setcounter{part}{8}		%force ToC correctness
+\setcounter{part}{8}		% force ToC correctness
 \setcounter{chapter}{79}
 \part*{Title IX: General Regulations}
 \addcontentsline{toc}{part}{Title IX: General Regulations}
@@ -113,7 +125,7 @@
 \setcounter{section}{0}
 \input{chap/chapter96}
 
-\setcounter{part}{10}		%force ToC correctness
+\setcounter{part}{10}		% force ToC correctness
 \setcounter{chapter}{109}
 \part*{Title XI: Business Regulations}
 \addcontentsline{toc}{part}{Title XI: Business Regulations}
@@ -151,7 +163,7 @@
 \setcounter{section}{0}
 \input{chap/chapter120}
 
-\setcounter{part}{12}		%force ToC correctness
+\setcounter{part}{12}		% force ToC correctness
 \setcounter{chapter}{129}
 \part*{Title XIII: General Offenses}
 \addcontentsline{toc}{part}{Title XIII: General Offenses}
@@ -159,7 +171,7 @@
 \setcounter{section}{0}
 \input{chap/chapter130}
 
-\setcounter{part}{14}		%force ToC correctness
+\setcounter{part}{14}		% force ToC correctness
 \setcounter{chapter}{149}
 \part*{Title XIV: Land Usage}
 \addcontentsline{toc}{part}{Title XIV: Land Usage}
