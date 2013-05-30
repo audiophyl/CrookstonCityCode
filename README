@@ -15,7 +15,7 @@ Chapter files will begin:
 
 'Sub-chapters' will be presented as:
 \begin{center}
-    \emph{\textbf{\LARGE{SUB-CHAPTER TITLE}}}
+    \emph{\textbf{\LARGE{SUB-CHAPTER TITLE\\[.1cm] STRAY SECOND LINE}}}
 \end{center}
 
 Lists preceded by an introduction ending in a colon (":") will be enumerated (with the form "1)", "A)" or "a)"):
