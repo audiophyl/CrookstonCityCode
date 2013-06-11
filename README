@@ -1,4 +1,4 @@
-2013-05-21
+2013-06-10
 
 Style/Formatting Notes.
 
@@ -13,12 +13,7 @@ Chapter files will begin:
         Cross references here}
     \pagebreak
 
-'Sub-chapters' will be presented as:
-\begin{center}
-    \emph{\textbf{\LARGE{SUB-CHAPTER TITLE\\[.1cm] STRAY SECOND LINE}}}
-\end{center}
-
-Lists preceded by an introduction ending in a colon (":") will be enumerated (with the form "1)", "A)" or "a)"):
+Lists preceded by an introduction ending in a colon (":") will be enumerated (with the form "1)", "A)", "a)", or "i)"):
 \begin{enumerate}[{\indent}1)]
     \item
     ...
@@ -28,7 +23,7 @@ Lists not preceded by an introduction ending in a colon will be treated as subse
 
 Smart quotes will be used in favor of double quotes.
 
-CAPITALIZED WORDS contained within a block of text will be \emph'd, but not \textbf'd.
+CAPITALIZED WORDS contained within a block of text will be \textbf'd only.
 
 2013-05-18
 
