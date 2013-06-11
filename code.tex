@@ -12,6 +12,7 @@
 \usepackage{lscape}     % allows us to insert landscape pages (only in chapter 152 thus far)
 \usepackage{setspace}   % fix multiline 'subchapters'
 \usepackage[stable]{footmisc}   % footnotes in section headings
+\usepackage{makeidx}    % for index generation
 \setcounter{tocdepth}{1}    % only show tocs to the section depth
 \setcounter{minitocdepth}{1}    % only show minitocs to the section depth
 \setcounter{secnumdepth}{4}     % force numbering to paragraph depth
@@ -26,9 +27,7 @@
 % unfortunately, doesn't show up in minitoc
 \newcommand{\subchapter}[1]{
     \begin{center}
-        \begin{spacing}{1.5}
-            \emph{\textbf{\LARGE{#1}}}
-        \end{spacing}
+        \begin{spacing}{1.5}\emph{\textbf{\LARGE{#1}}}\end{spacing}
     \end{center}
     \addtocontents{toc}{%
          \protect\vspace{.3em}% 
@@ -46,6 +45,8 @@
     linktoc=all,
     linkcolor=blue
 }
+
+\makeindex  % must be done in preamble
 
 \begin{document}
 
@@ -209,4 +210,8 @@
 \setcounter{chapter}{152}
 \setcounter{section}{0}
 \input{chap/chapter152}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Index}
+\printindex % last, but not least
 \end{document}
