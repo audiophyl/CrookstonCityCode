@@ -27,8 +27,9 @@
 % unfortunately, doesn't show up in minitoc
 \newcommand{\subchapter}[1]{
     \begin{center}
-        \begin{spacing}{1.5}\emph{\textbf{\LARGE{#1}}}\end{spacing}
+        \begin{spacing}{1.5}\vskip1cm\emph{\textbf{\LARGE{#1}}}\end{spacing}
     \end{center}
+    \vskip-1cm
     \addtocontents{toc}{%
          \protect\vspace{.3em}% 
          \protect\noindent #1\protect\par
