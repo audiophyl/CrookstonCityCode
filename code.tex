@@ -13,6 +13,7 @@
 \usepackage{setspace}   % fix multiline 'subchapters'
 \usepackage[stable]{footmisc}   % footnotes in section headings
 \usepackage{makeidx}    % for index generation
+\usepackage{needspace}  % hack to keep our 'subchapters' from being widows
 \setcounter{tocdepth}{1}    % only show tocs to the section depth
 \setcounter{minitocdepth}{1}    % only show minitocs to the section depth
 \setcounter{secnumdepth}{4}     % force numbering to paragraph depth
@@ -26,10 +27,12 @@
 % create 'subchapters' and include them in our ToC
 % unfortunately, doesn't show up in minitoc
 \newcommand{\subchapter}[1]{
+    \needspace{10\baselineskip}
     \begin{center}
-        \begin{spacing}{1.5}\vskip1cm\emph{\textbf{\LARGE{#1}}}\end{spacing}
+        \begin{spacing}{1.5}\vskip-2cm\emph{\textbf{\LARGE{#1}}}\end{spacing}
     \end{center}
-    \vskip-1cm
+    \vskip-1cm\nobreak
+    %{\vskip2cm\centering\LARGE #1\\*}
     \addtocontents{toc}{%
          \protect\vspace{.3em}% 
          \protect\noindent #1\protect\par
@@ -47,18 +50,23 @@
     linkcolor=blue
 }
 
+% let's be more aggressive about eliminating widows and orphans from our text
+\widowpenalty=1000
+\clubpenalty=1000
+
 \makeindex  % must be done in preamble
 
 \begin{document}
 
-\title{Crookston City Code}
-\date{2013-06-07}
-\author{}
+\frontmatter
+    \title{Crookston City Code}
+    \date{2013-06-07}
+    \author{}
 
-\maketitle
+    \maketitle
 
-\dominitoc                  % set up for minitoc
-\tableofcontents
+    \dominitoc                  % set up for minitoc
+    \tableofcontents
 
 \mainmatter
 
@@ -200,7 +208,7 @@
 
 \setcounter{part}{14}		% force ToC correctness
 \setcounter{chapter}{149}
-\part*{Title XIV: Land Usage}
+\part*{Title XV: Land Usage}
 \addcontentsline{toc}{part}{Title XIV: Land Usage}
 \setcounter{chapter}{150}
 \setcounter{section}{0}
@@ -214,5 +222,7 @@
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Index}
-\printindex % last, but not least
+
+\backmatter
+    \printindex % last, but not least
 \end{document}
