@@ -14,6 +14,7 @@
 \usepackage[stable]{footmisc}   % footnotes in section headings
 \usepackage{makeidx}    % for index generation
 \usepackage{needspace}  % hack to keep our 'subchapters' from being widows
+\usepackage{fancyhdr}   % custom headers and footers
 \setcounter{tocdepth}{1}    % only show tocs to the section depth
 \setcounter{minitocdepth}{1}    % only show minitocs to the section depth
 \setcounter{secnumdepth}{4}     % force numbering to paragraph depth
@@ -32,7 +33,6 @@
         \begin{spacing}{1.5}\vskip-2cm\emph{\textbf{\LARGE{#1}}}\end{spacing}
     \end{center}
     \vskip-1cm\nobreak
-    %{\vskip2cm\centering\LARGE #1\\*}
     \addtocontents{toc}{%
          \protect\vspace{.3em}% 
          \protect\noindent #1\protect\par
@@ -41,9 +41,14 @@
 }
 
 \newcommand{\fillable}[1]{\noindent\rule{#1}{0.6pt}}    % create a command for drawing a signature/date type line
+
+% tocloft
 \setlength{\cftsecnumwidth}{3.7em}  % give ourselves enough space between section numbers and their titles in the toc
+
+% minitoc
 \renewcommand{\mtcSfont}{\small\normalfont} % print our minitocs in a normal font
 
+% hyperref
 \hypersetup{
     colorlinks,
     linktoc=all,
@@ -54,21 +59,35 @@
 \widowpenalty=1000
 \clubpenalty=1000
 
-\makeindex  % must be done in preamble
+% makeidx
+\makeindex
+
+% fancyhdr
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
 
 \frontmatter
-    \title{Crookston City Code}
+    \title{\Huge{Crookston City Code}}
     \date{2013-06-07}
     \author{}
 
     \maketitle
 
+    \fancyhead[LE,RO]{}
+    \fancyhead[CE,CO]{TABLE OF CONTENTS}
+    \fancyfoot[LE,RO]{\thepage}
     \dominitoc                  % set up for minitoc
     \tableofcontents
 
 \mainmatter
+
+\fancyhead[LE,RO]{\thesection}
+\fancyhead[CE,CO]{CITY OF CROOKSTON CODES \& ORDINANCES}
+\fancyfoot[LE,RO]{\thepage}
 
 \setcounter{part}{0}        % force toc correctness
 \part*{Title I: General Provisions}
@@ -224,5 +243,8 @@
 \addcontentsline{toc}{chapter}{Index}
 
 \backmatter
+    \fancyhead[LE,RO]{}
+    \fancyhead[CE,CO]{INDEX}
+    \fancyfoot[LE,RO]{\thepage}
     \printindex % last, but not least
 \end{document}
