@@ -33,11 +33,12 @@
         \begin{spacing}{1.5}\vskip-2cm\emph{\textbf{\LARGE{#1}}}\end{spacing}
     \end{center}
     \vskip-1cm\nobreak
+%    \addcontentsline{toc}{}{\protect{\hspace{1em}SUBCHAPTER: #1\hfill}}
     \addtocontents{toc}{%
-         \protect\vspace{.3em}% 
-         \protect\noindent #1\protect\par
-         \protect\vspace{.1em}%
-     }
+        \protect\vspace{.3em}% 
+        \protect\noindent\hspace{1em}SUBCHAPTER: #1\protect\par
+        \protect\vspace{.1em}%
+    }
 }
 
 \newcommand{\fillable}[1]{\noindent\rule{#1}{0.6pt}}    % create a command for drawing a signature/date type line
@@ -72,6 +73,7 @@
 
 \frontmatter
     \input{chap/title}
+    \cleardoublepage
     \fancyhead[LE,RO]{}
     \fancyhead[CE,CO]{TABLE OF CONTENTS}
     \fancyfoot[LE,RO]{\thepage}
