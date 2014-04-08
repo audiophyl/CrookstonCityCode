@@ -22,7 +22,7 @@
 \renewcommand{\theparagraph}{\thesubsubsection.\alph{paragraph}}    % give our paragraphs lower-case letters instead of numbers
 
 % we want three digit long sections, so enforce leading zeros
-\newcommand{\leadingzero}{\ifnum\value{section}<100 \ifnum\value{section}<10 00\else 0\fi\fi\arabic{section}}
+\newcommand{\leadingzero}{\ifnum\value{section}<100 \ifnum\value{section}<10 0\else \fi\fi\arabic{section}}
 \renewcommand{\thesection}{\thechapter.\leadingzero}
 
 % create 'subchapters' and include them in our ToC
